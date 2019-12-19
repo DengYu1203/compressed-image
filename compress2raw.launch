@@ -1,0 +1,38 @@
+<launch>
+    <node
+        pkg="image_transport"
+        type="republish"
+        name="image_republisher"
+        args="compressed in:=/image_front raw out:=/image_front_raw">
+    </node>
+    <node
+        pkg="image_transport"
+        type="republish"
+        name="image_republisher2"
+        args="compressed in:=/image_front_right raw out:=/image_front_right_raw">
+    </node>
+    <node
+        pkg="image_transport"
+        type="republish"
+        name="image_republisher3"
+        args="compressed in:=/image_front_left raw out:=/image_front_left_raw">
+    </node>
+    <node
+        pkg="image_transport"
+        type="republish"
+        name="image_republisher4"
+        args="compressed in:=/image_back raw out:=/image_back_raw">
+    </node>
+    <node
+        pkg="image_transport"
+        type="republish"
+        name="image_republisher5"
+        args="compressed in:=/image_back_right raw out:=/image_back_right_raw">
+    </node>
+    <node
+        pkg="image_transport"
+        type="republish"
+        name="image_republisher6"
+        args="compressed in:=/image_back_left raw out:=/image_back_left_raw">
+    </node>
+</launch>
