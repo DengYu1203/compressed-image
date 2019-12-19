@@ -1,6 +1,6 @@
 # compressed-image
 Using image_transport(ROS pkg) to compress and decompress image
-1. compress the raw image with png-compressed method(png level=9)
+1. compress the raw image with png-compressed method(png level=9), because the jpeg-compressed would casue distortion
 2. decompress the compressed image to raw image
 
 ## source
