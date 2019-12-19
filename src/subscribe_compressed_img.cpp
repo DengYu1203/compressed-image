@@ -86,26 +86,7 @@ void internalCallback(const sensor_msgs::CompressedImageConstPtr& message){
   if ((rows > 0) && (cols > 0)){
     // Publish message to user callback
     //user_cb(cv_ptr->toImageMsg());
-    sensor_msgs::ImageConstPtr msg = cv_ptr->toImageMsg();
-    try
-    {
-      cv::imshow("view2", cv_ptr->image);
-      if(!comp_check){
-          // img_comp = cv_ptr->image;
-          img_comp = cv_bridge::toCvShare(msg, "mono16")->image;
-          comp_check = true;
-          cout<<"Compressed row:"<<img_comp.rows<<", col:"<<img_comp.cols<<endl;
-      }
-      else if(orig_check){
-          if(!test_check)
-              test();
-      }
-      cv::waitKey(10);
-    }
-    catch (cv_bridge::Exception& e)
-    {
-      ROS_ERROR("Could not convert from '%s' to 'bgr8'.", cv_ptr->encoding.c_str());
-    }
+    sensor_msgs::ImageConstPtr msg = cv_ptr->toImageMsg();  //get the raw image data
   }
 }
 int main(int argc, char** argv)
@@ -114,6 +95,6 @@ int main(int argc, char** argv)
     ros::NodeHandle nh;
     image_transport::ImageTransport it(nh);
     ////////subscribe////////
-    ros::Subscriber sub_comp = nh.subscribe("camera_comp_dir", 1, internalCallback);
+    ros::Subscriber sub_comp = nh.subscribe("image_compressed", 1, internalCallback);
 
 }
