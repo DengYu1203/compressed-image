@@ -13,6 +13,7 @@ However, the image_transport package cannot directly transform the raw image to 
 
 ## method
 > Make sure that the *compressed_image_transport* and *image_transport* are installed.
+
 I use the [compressed_image_transport](http://wiki.ros.org/compressed_image_transport) to get the [sensor_msgs::CompressedImage msg](src/publish_compressed_img.cpp).
 In addition, I also write the file to convert the compressedImage to [sensor_msgs::Image msg](src/subscribe_compressed_img.cpp).
 
