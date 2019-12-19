@@ -6,6 +6,7 @@ Using image_transport(ROS pkg) to compress and decompress image
 ## source
 1. [image_transport ROS wiki](http://wiki.ros.org/image_transport)
 2. [compressed_image_transport](http://wiki.ros.org/compressed_image_transport)
+3. [image_transport_plugins](https://github.com/ros-perception/image_transport_plugins)
 
 ## background
 I need to get the sensor_msgs::CompressedImage msg from sensor_msgs::Image msg directly because I want to write the sensor_msgs::CompressedImage msg into rosbag.
